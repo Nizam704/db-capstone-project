@@ -11,8 +11,8 @@ INSERT INTO customers (CustomerID, CustomerName, ContactNumber, Email) VALUES
 (2, 'Jane Smith', 0987654321, 'janesmith@example.com'),
 (3, 'Michael Brown', 1122334455, 'michaelb@example.com'),
 (4, 'Emily White', 1223344556, 'emilyw@example.com'),
-(5, 'Robert Black', 9876543210, 'robertb@example.com'),
-(6, 'Sophia Green', 9988776655, 'sophiag@example.com');
+(5, 'Robert Black', 1876543210, 'robertb@example.com'),
+(6, 'Sophia Green', 1988776655, 'sophiag@example.com');
 
 INSERT INTO deliverystatus (DeliveryID, DeliveryDate, DeliveryStatus, StaffID) VALUES
 (1, '2024-08-10', 'Delivered', 1),
@@ -22,14 +22,6 @@ INSERT INTO deliverystatus (DeliveryID, DeliveryDate, DeliveryStatus, StaffID) V
 (5, '2024-08-14', 'Pending', 2),
 (6, '2024-08-15', 'Delivered', 3);
 
-INSERT INTO menu (MenuID, Cuisine, Starters, Drinks, Desserts, MenuItemID) VALUES
-(1, 'Italian', 'Bruschetta', 'Red Wine', 'Tiramisu', 1),
-(2, 'Chinese', 'Spring Rolls', 'Green Tea', 'Mango Pudding', 2),
-(3, 'Mexican', 'Nachos', 'Margarita', 'Churros', 3),
-(4, 'Indian', 'Samosa', 'Masala Chai', 'Gulab Jamun', 4),
-(5, 'French', 'Escargot', 'Champagne', 'Crème Brûlée', 5),
-(6, 'American', 'Chicken Wings', 'Cola', 'Apple Pie', 6);
-
 INSERT INTO menuitems (MenuItemID, ItemName, ItemPrice) VALUES
 (1, 'Margherita Pizza', 8.99),
 (2, 'Kung Pao Chicken', 12.99),
@@ -38,13 +30,22 @@ INSERT INTO menuitems (MenuItemID, ItemName, ItemPrice) VALUES
 (5, 'Coq au Vin', 19.99),
 (6, 'BBQ Ribs', 15.99);
 
+INSERT INTO menu (MenuID, Cuisine, Starters, Drinks, Desserts, MenuItemID) VALUES
+(1, 'Italian', 'Bruschetta', 'Red Wine', 'Tiramisu', 1),
+(2, 'Chinese', 'Spring Rolls', 'Green Tea', 'Mango Pudding', 2),
+(3, 'Mexican', 'Nachos', 'Margarita', 'Churros', 3),
+(4, 'Indian', 'Samosa', 'Masala Chai', 'Gulab Jamun', 4),
+(5, 'French', 'Escargot', 'Champagne', 'Crème Brûlée', 5),
+(6, 'American', 'Chicken Wings', 'Cola', 'Apple Pie', 6);
+
+
 INSERT INTO orders (OrderID, OrderDate, Quantity, TotalCost, BookingID, MenuID, DeliveryID, CustomerID) VALUES
-(1, '2024-08-10', 2, 17.98, 101, 1, 201, 1),
-(2, '2024-08-11', 1, 12.99, 102, 2, 202, 2),
-(3, '2024-08-12', 3, 29.97, 103, 3, 203, 3),
-(4, '2024-08-13', 1, 14.99, 104, 4, 204, 4),
-(5, '2024-08-14', 2, 39.98, 105, 5, 205, 5),
-(6, '2024-08-15', 4, 63.96, 106, 6, 206, 6);
+(1, '2024-08-10', 2, 17.98, 1, 1, 1, 1),
+(2, '2024-08-11', 1, 12.99, 2, 2, 2, 2),
+(3, '2024-08-12', 3, 29.97, 3, 3, 3, 3),
+(4, '2024-08-13', 1, 14.99, 4, 4, 4, 4),
+(5, '2024-08-14', 2, 39.98, 5, 5, 5, 5),
+(6, '2024-08-15', 4, 63.96, 6, 6, 6, 6);
 
 INSERT INTO staff (StaffID, FirstName, LastName, Role, Salary) VALUES
 (1, 'Emily', 'Clark', 'Delivery Driver', 3000.00),
@@ -53,6 +54,5 @@ INSERT INTO staff (StaffID, FirstName, LastName, Role, Salary) VALUES
 (4, 'James', 'Wilson', 'Manager', 5000.00),
 (5, 'Alice', 'Davis', 'Cleaner', 2000.00),
 (6, 'Chris', 'Taylor', 'Bartender', 2800.00);
-
 
 
